@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="Demo"></p>
+    <p id="Demo1"></p>
+    <script>
+        document.getElementById("Demo").innerHTML="<i>welcome</i>"
+         document.getElementById("Demo1").innerText="<i>welcome</i>"
+    </script>
+    <p id="title">WELCOME</p>
+    <button onclick="changetext()">Click Me!!</button>
+    <script>
+        function changetext(){
+            document.getElementById("title").innerHTML="<h1>To Dom</h1>";
+            document.getElementById("title").style.color="red";
+        }
+    </script>
+    <h1 id="ex">Hello Javascript</h1>
+    <script>
+        const heading=document.getElementById("ex");
+        heading.style.backgroundColor="purple";
+        heading.style.color="white";
+    </script>
+</body>
+</html>

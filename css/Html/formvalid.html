@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>form validation</title>
+</head>
+<body>
+    <h2>Simple form validation </h2>
+    <form id="myform">
+        <label>NAME:</label>
+        <input type="text" id="name" placeholder="enter your full name" >
+        <br>
+        <br>
+        <label>EMAIL:</label>
+        <input type="text" id="email" placeholder="enter your email" >
+
+        <br>
+        <br>
+        <p id="msg"> message</p>
+        <br>
+        <button type="submit" id="submit">SUBMIT</button>
+    </form>
+
+    
+
+    <script>
+        const form= document.getElementById("myform");
+        const msg=document.getElementById("msg");
+
+        form.addEventListener("submit", function(e){
+            e.preventDefault();  // prevents page from refreshing
+
+            const name= document.getElementById("name").value.trim();
+            const email= document.getElementById("email").value.trim();
+
+            if(name==="")
+            {
+                msg.innerText="Name cannot be empty";
+                msg.style.color="red";
+            }
+
+            else if(email==="")
+            {
+                msg.innerText="Email cannot be empty";
+                msg.style.color="red";
+            }
+
+            else if(!email.includes("@"))
+            {
+                msg.innerText="Email is invalid";
+                msg.style.color="red";
+            }
+
+            else
+            {
+                msg.innerText="Form submitted successfully";
+                msg.style.color="green";
+            }
+            
+        });
+        
+    </script>
+</body>
+</html>
